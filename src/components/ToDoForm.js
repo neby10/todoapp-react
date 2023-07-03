@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "../styles/Form.css";
+import "../styles/Buttons.css";
 
 function ToDoForm(props) {
     const { listIndex, addTodo } = props;
@@ -31,17 +33,26 @@ function ToDoForm(props) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form 
+            className="form"
+            onSubmit={handleSubmit}>
             <p>Add To Do Item</p>
             <label>Name</label>
-            <input type="text" name="name" value={formData.name} onChange={handleChange} />
-            <br></br>
+            <input 
+                type="text" 
+                name="name" 
+                value={formData.name} 
+                onChange={handleChange} />
             <label>Description</label>
             <textarea type="text" name="description" value={formData.description} onChange={handleChange} />
             <br></br>
             <label>Importance</label>
             <input type="number" name="importance" value={formData.importance} onChange={handleChange} />
-            <button type="submit">Add Item</button>
+            <button 
+                className="button-30"
+                type="submit">
+                    Add Item
+            </button>
             <br></br>
         </form>
     )

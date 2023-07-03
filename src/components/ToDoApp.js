@@ -3,7 +3,8 @@ import ToDoList from './ToDoList';
 import ToDoForm from './ToDoForm';
 import ToDoAddListForm from './ToDoAddListForm';
 import trashIcon from '../trash-icon.png'
-import "../styles/ToDoApp.css"
+import "../styles/ToDoApp.css";
+import "../styles/Buttons.css";
 
 function ToDoApp() {
     const [lists, setLists] = useState([
@@ -15,14 +16,14 @@ function ToDoApp() {
     ])
     const [todos, setTodos] = useState([
         [
-            {id: 0, name: "Eat Breakfast", description: "breakfast", importance: 10},
-            {id: 1, name: "Eat Lunch", description: "lunch", importance: 10},
-            {id: 2, name: "Eat Dinner", description: "dinner", importance: 10},
+            {id: 0, name: "Eat Breakfast", description: "5 eggs, 3 bacons", importance: 10},
+            {id: 1, name: "Eat Lunch", description: "sammiches", importance: 10},
+            {id: 2, name: "Eat Dinner", description: "Cheddar Beef Nachos", importance: 10},
         ],
         [
-            {id: 0, name: "Lemons", description: "organic", importance: 4},
-            {id: 1, name: "Eggs", description: "organic", importance: 7},
-            {id: 2, name: "Chicken", description: "organic", importance: 9},
+            {id: 0, name: "Lemons", description: "When life gives you lemons, make lemonade.", importance: 4},
+            {id: 1, name: "Eggs", description: "12 dozen", importance: 7},
+            {id: 2, name: "Chicken", description: "Remember to buy organic.", importance: 9},
         ],
         [
             {id: 0, name: "Outlaw King", description: "Robert the Bruce frees Scotland", importance: 7},
@@ -30,14 +31,14 @@ function ToDoApp() {
             {id: 2, name: "Hillbilly Elegy", description: "Kid makes it out of appalacia", importance: 4},
         ],
         [
-            {id: 0, name: "Modern Warfare", description: "", importance: 7},
-            {id: 1, name: "Modern Warfare 2", description: "", importance: 6},
-            {id: 2, name: "Modern Warfare 2", description: "", importance: 6},
+            {id: 0, name: "Modern Warfare", description: "Great game", importance: 7},
+            {id: 1, name: "Modern Warfare 2", description: "best game ever", importance: 6},
+            {id: 2, name: "Modern Warfare 3", description: "Good game", importance: 6},
         ],
         [
-            {id: 0, name: "Where the Red Fern Grows", description: "", importance: 7},
-            {id: 1, name: "Old Yeller", description: "", importance: 6},
-            {id: 2, name: "Battle of Skandia", description: "", importance: 6},
+            {id: 0, name: "Where the Red Fern Grows", description: "This is a book", importance: 7},
+            {id: 1, name: "Old Yeller", description: "This is also a book", importance: 6},
+            {id: 2, name: "Battle of Skandia", description: "This is a book as well", importance: 6},
         ]
     ])
     const [selected, setSelected] = useState(0);
@@ -121,8 +122,18 @@ function ToDoApp() {
     
     return (
         <div>
-            <h1>To Do App</h1>
-            <p>selected: {selected}</p>
+            <h1 className='appTitle'>TO DO APP</h1>
+            <h2 className='listsTitle'>Your Lists</h2>
+            <button 
+                className='button-30'
+                onClick={() => setShowListForm(!showListForm)}>
+                { showListForm && <span>Close </span> }
+                Add New List
+            </button>
+            {showListForm &&
+            <ToDoAddListForm
+                addList={addList}
+            />}
             <ul className='selectList'>
                 {lists.map((list) => 
                     <li 
@@ -150,15 +161,9 @@ function ToDoApp() {
                     </li>
                 )}
             </ul>
-            <button onClick={() => setShowListForm(!showListForm)}>
-                { showListForm && <span>Close </span> } Add New List
-            </button>
-            {showListForm &&
-            <ToDoAddListForm
-                addList={addList}
-            />}
-            <br></br>
-            <button onClick={() => setShowItemForm(!showItemForm)}>
+            <button 
+                className='button-30'
+                onClick={() => setShowItemForm(!showItemForm)}>
                 { showItemForm && <span>Close </span> } Add New Item
             </button>
             {showItemForm && 

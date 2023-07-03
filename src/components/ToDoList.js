@@ -1,13 +1,13 @@
 import React from "react";
 import ToDoItem from "./ToDoItem";
-import ToDoForm from "./ToDoForm";
+import "../styles/ToDoList.css";
 
 function ToDoList(props) {
     const { list, todos, deleteTodo, updateTodo } = props;
     
     return (
-        <div>
-            <h2>{list.name}</h2>
+        <div className="todoList">
+            <h2 className="listTitle">{list.name}</h2>
             
             {todos.map((todo) => 
                 <ToDoItem 

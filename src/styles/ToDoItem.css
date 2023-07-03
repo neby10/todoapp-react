@@ -1,5 +1,17 @@
+/* .selectList {
+    list-style-type: none;
+    max-width: 520px;
+    padding: 12px;
+    margin: 10px auto;
+    border: 1px solid #eee;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.06);
+  } */
+
 .itemWrapper {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: 'Space Mono', monospace; 
+    display: flex;
+    flex-direction: column;
     width: 70%;
     text-align: center;
     border: 2px solid black;

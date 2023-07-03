@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/Form.css";
 
 function ToDoAddListForm(props) {
     const { addList } = props;
@@ -18,7 +19,9 @@ function ToDoAddListForm(props) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form 
+            className="form"
+            onSubmit={handleSubmit}>
             <p>Add To Do List</p>
             <label>Name</label>
             <input type="text" name="name" value={name} onChange={handleChange} />

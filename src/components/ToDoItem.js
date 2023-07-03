@@ -31,13 +31,15 @@ function ToDoItem(props) {
                 onChange={handleChange}
                 onBlur={(event) => handleBlur(listId, todo.id, "name", event.target.value)}
             />}
-            <span 
-                className='itemId'>
-                Id: { todo.id }
-            </span>
-            <span>
-                Importance: { todo.importance }
-            </span>
+            <div>
+                <span 
+                    className='itemId'>
+                    Id: { todo.id }
+                </span>
+                <span>
+                    Importance: { todo.importance }
+                </span>
+            </div>
             <span
                 className='itemDescription'>
                 Description: { todo.description }
