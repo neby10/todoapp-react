@@ -1,0 +1,16 @@
+
+.selectList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.selectListItem {
+    color: blue;
+}
+
+
+
+.trashIcon:hover {
+    cursor: pointer;
+}

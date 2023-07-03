@@ -1,0 +1,32 @@
+.itemWrapper {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 70%;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px auto;
+    background-color: lightgray;
+}
+
+.itemWrapper p {
+    margin: auto;
+    padding: 0;
+}
+
+.itemTitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 0px 40px;
+}
+
+.itemId {
+    margin: 0px 20px;
+}
+
+.itemDescription {
+    font-size: 14px;
+}
+
+.trashIcon:hover {
+    cursor: pointer;
+}
